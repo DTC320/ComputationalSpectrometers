@@ -5,7 +5,7 @@ from sklearn.decomposition import PCA
 import numpy as np
 import os 
 
-class SPDReconstruction:
+class SPDRePCA:
     def __init__(self, spd_data, n_components, wavelengths, mu, sigma):
         self.data = spd_data
         self.n_components = n_components
@@ -28,7 +28,7 @@ class SPDReconstruction:
         self.a_hat = np.dot(self.M_inv, response_diff)
         mean_spd = np.mean(self.data, axis=1)
         self.reconstructed_spectrum = np.dot(self.scores, self.a_hat) + mean_spd[:, np.newaxis]
-        return self.reconstructed_spectrum
+        return self.reconstructed_spectrum , self.scores, self.a_hat
 
     def Plot(self, Light):
         # 创建一个包含三个子图的图像
@@ -86,7 +86,8 @@ if __name__ == '__main__':
     wavelengths = np.arange(360, 831)
     mu = np.array([415, 445, 480, 515, 555, 590, 630, 680])
     sigma = np.array([11.0403, 12.7388, 15.2866, 16.5605, 16.5605, 16.9851, 21.2314, 22.0807])
-    r = SPDReconstruction(spd, 8, wavelengths, mu, sigma)
+    r = SPDRePCA(spd, 8, wavelengths, mu, sigma)
     r.Reconstructed_spectrum()
-    r.Plot(103)
-    r.Evaluate(103)
+    #r.Plot(103)
+    #r.Evaluate(103)
+    print(r.a_hat.shape)
