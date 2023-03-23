@@ -77,6 +77,19 @@ class SPDRePCA:
         print("RRMES: ", RRMSE)
         print("GFC: ", GFC)
 
+    def predict(self, new_data):
+        # 对新数据进行标准化
+        normalized_data = (new_data - np.mean(self.data, axis=1)) / np.std(self.data, axis=1)
+
+        # 使用训练好的PCA模型将新数据降维
+        new_scores = self._pca.transform(normalized_data.reshape(1,-1))
+
+        # 将降维后的数据与训练集的响应矩阵相乘，得到重建的新光谱
+        new_spectrum = np.dot(self.filters, new_scores.T) + self.mean_response
+
+        # 使用训练集的均值和标准差对重建后的新光谱进行反标准化，得到最终的预测结果
+        final_spectrum = new_spectrum * np.std(self.data, axis=1)[:, np.newaxis]
+
 
 
 
