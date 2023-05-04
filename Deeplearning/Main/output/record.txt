@@ -1,0 +1,40 @@
+daylight dataset:
+
+Epoch [1/10], Train Loss: 0.0020
+Epoch [2/10], Train Loss: 0.0015
+Epoch [3/10], Train Loss: 0.0011
+Epoch [4/10], Train Loss: 0.0004
+Epoch [5/10], Train Loss: 0.0001
+Epoch [6/10], Train Loss: 0.0000
+Epoch [7/10], Train Loss: 0.0000
+Epoch [8/10], Train Loss: 0.0000
+Epoch [9/10], Train Loss: 0.0000
+Epoch [10/10], Train Loss: 0.0000
+Test loss: 0.0003190874995198101
+
+skylight dataset:
+
+Epoch [1/10], Train Loss: 0.0001
+Epoch [2/10], Train Loss: 0.0001
+Epoch [3/10], Train Loss: 0.0000
+Epoch [4/10], Train Loss: 0.0000
+Epoch [5/10], Train Loss: 0.0000
+Epoch [6/10], Train Loss: 0.0000
+Epoch [7/10], Train Loss: 0.0000
+Epoch [8/10], Train Loss: 0.0000
+Epoch [9/10], Train Loss: 0.0000
+Epoch [10/10], Train Loss: 0.0000
+Test loss: 4.283541056793183e-05
+
+spectrum dataset(what we used before):
+Epoch [1/10], Train Loss: 0.0025
+Epoch [2/10], Train Loss: 0.0008
+Epoch [3/10], Train Loss: 0.0007
+Epoch [4/10], Train Loss: 0.0004
+Epoch [5/10], Train Loss: 0.0002
+Epoch [6/10], Train Loss: 0.0000
+Epoch [7/10], Train Loss: 0.0000
+Epoch [8/10], Train Loss: 0.0000
+Epoch [9/10], Train Loss: 0.0000
+Epoch [10/10], Train Loss: 0.0000
+Test loss: 6.754168862244114e-05
